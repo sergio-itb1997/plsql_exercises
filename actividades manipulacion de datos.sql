@@ -1,12 +1,12 @@
-﻿Activitats
-1. Realitza un programa que ens mostri els números entre un rang. El rang mínim és 1 i el màxim se l’ha de preguntar a l’usuari.
-Realitzar el programa utilitzant l’estructura FOR o l’estructura WHILE. Per realitzar aquest exercici has de fer servir un procediment, de tal manera que mostri els números entre un rang en aquest procediment.
-Ajuda: 
-* S’ha de programar dins del programa un procediment que donat el rang mínim a 1 i el màxim que se li passa com a paràmetre al procediment, imprimeixi per pantalla els números que hi ha entre el rang mínim i el màxim. El procediment rebrà el nom de RANG. 
-* A més, al mateix exercici s’ha de programar un bloc principal, que ha de contenir els següents aspectes:
-   * preguntar a l’usuari pel rang màxim.
-   * comprovar que el rang màxim no és negatiu. Si és negatiu donar el missatge corresponent i acabar el programa. 
-   * Cridar al procediment RANG, passant com a paràmetre el rang màxim introduït per teclat.
+--Activities
+--1. Make a program that shows us the numbers in a range. The minimum range is 1 and the maximum should be asked to the user.
+--Perform the program using the FOR structure or the WHILE structure. To perform this exercise you must use a procedure, in such a way that it shows the numbers between a range in this procedure.
+--Help:
+--* A procedure must be programmed within the program that, given the minimum range of 1 and the maximum that is passed as a parameter to the procedure, prints the numbers between the minimum and maximum range on the screen. The procedure will be called RANG.
+--* In addition, a main block must be programmed in the same exercise, which must contain the following aspects:
+ --  * ask the user for the maximum range.
+  -- * check that the maximum range is not negative. If it is negative give the corresponding message and end the program.
+  -- * Call the RANG procedure, passing the maximum range entered per keyboard as a parameter.
 
 
 
@@ -34,26 +34,7 @@ end rango;
 /
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-2. Realitzar un programa que contingui una funció que dupliqui la quantitat rebuda com a paràmetre. La funció rebrà el nom de DUPLICAR_QUANTITAT. Al mateix programa s’ha de programa un bloc principal que demani per teclat la quantitat i que cridi a la funció que s’acaba de programar, passant el paràmetre corresponent.
-
-
-
-
-
-
-
+-- 2. Make a program that contains a function that doubles the amount received as a parameter. The function will be named DUPLICATE_QUANTITY. In the same program, a main block must be programmed that asks for the quantity by the keyboard and calls the function that has just been programmed, passing the corresponding parameter.
 
 accept cantidad_original prompt 'Introduce una cantidad'
 declare 
@@ -81,44 +62,7 @@ end;
 drop procedure duplicar_quantitat;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3. Realitzar un programa que contengui una funció que calculi el factorial d’un número que es passa com a paràmetre. La funció rebrà el nom de FACTORIAL. Al mateix programa s’ha de programar un bloc principal que pregunti a l’usuari pel número a calcular i cridi a la funció FACTORIAL, passant el paràmetre corresponent.
-
+-- 3. Make a program that contains a function that calculates the factorial of a number that is passed as a parameter. The function will be called FACTORIAL. In the same program, a main block must be programmed that asks the user for the number to be calculated and calls the FACTORIAL function, passing the corresponding parameter.
 
 accept numero_original prompt 'Introduce un numero'
 declare 
@@ -143,53 +87,12 @@ end;
 /
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4. Realitzar un programa que contingui un procediment, una funció i un bloc principal.
-   1. El  procediment  que  rebrà  el  nom  de IMPRIMIR,  ha  de mostrar  els  números  entre  un  rang  amb  un  salt.  El  rang mínim, el rang màxim i el salt s’han de passar com a paràmetre  al  procediment.   
-   2. A la funció que rebrà el nom de COMPROVAR_NEGATIU, s’ha de programar per a controlar:
-      1. Que el rang mínim no sigui més gran que el rang màxim.
-      2. Que el rang mínim, el rang màxim i el salt no sigui negatiu.
-   3. El bloc anònim ha de preguntar a l’usuari les dades necessàries i ha de cridar a la funció per comprovar les dades i després si tot és correcta, crida al procediment per imprimir les dades. 
-
+--4. Make a program that contains a procedure, a function, and a main block.
+--    1. The procedure, which will be called PRINT, must display the numbers between a range and a hop. Minimum range, maximum range and jump must be passed as parameters in the procedure.
+--    2. In the function named CHECK_NEGATIVE, you must program to control:
+--       1. That the minimum range is not greater than the maximum range.
+--       2. That the minimum range, maximum range and jump are not negative.
+--    3. The anonymous blog should ask the user for the necessary data and should call the function to check the data and then if everything is correct, call the procedure to print the data.
 
 
 
@@ -248,8 +151,8 @@ end i
 
 
 
-5. Realitzar un programa que demani per pantalla l’id d’un empleat i mostri el seu codi, el seu nom, el seu càrrec (job_title) i el seu salari. Has de canviar els nom de les columnes perquè sigui (codi_empleat, nom_empleat, càrrec, salari). 
-Per realitzar aquest exercici has de fer servir una variable de tipus %rowtype.
+-- 5. Make a program that asks for an employee's ID on screen and shows their code, name, job (job_title) and salary. You must rename the columns to be (employee_code, employee_name, position, salary).
+To perform this exercise you must use a variable of type% rowtype.
 
 
 
@@ -272,27 +175,7 @@ end;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-6. Realitzar un programa que contingui un procediment que doni d’alta un nou càrrec (job_title) a la taula jobs. Les dades del nou càrrec s’han d’introduir per teclat. Abans d’inserir s’ha de comprovar que el valor màxim i mínim del salari no sigui negatiu i a més, que el salari mínim sigui més petit que el salari màxim. Dóna els missatges d’error corresponents
-
-
-
-
-
-
-
+-- 6. Run a program that contains a procedure that registers a new position (job_title) in the jobs table. New charge data must be entered by keyboard. Before entering, it must be verified that the maximum and minimum value of the salary is not negative and, in addition, that the minimum wage is smaller than the maximum wage. Returns the corresponding error messages
 
 accept id_job prompt 'Introduce el id del cargo'
 accept title_job prompt 'Introduce el nombre del cargo'
@@ -330,20 +213,7 @@ end;
 select * from jobs;
 
 
-
-
-
-
-
-
-
-
-
-
-7. Realitzar un programa per donar de baixa un càrrec (job_title). El codi del càrrec s’ha d'introduir per teclat.
-
-
-
+-- 7. Make a program to unsubscribe from a position (job_title). The charge code must be entered by keyboard.
 
 accept idjob prompt 'Introdueix l´id del carrec a esborrar';
 
@@ -355,12 +225,7 @@ BEGIN
 end;
 
 
-
-
-
-
-8. Realitzar un programa que contingui una funció que retorni quants empleats hi ha a un departament, aquest es passarà com a paràmetre de la funció. La funció s’anomenarà COMPTAR i es cridarà des d’un bloc anònim  o principal, i el paràmetre que se li passa a la funció se li preguntarà a l’usuari i per tant, s’ha d’introduir per teclat.
-
+--8. Make a program that contains a function that returns how many employees there are in a department, this will be passed as a parameter of the function. The function will be called COUNT and will be called from an anonymous or main block, and the parameter passed to the function will be asked to the user and therefore must be entered by keyboard.
 
 
 
@@ -414,8 +279,7 @@ end buscardepartamento;
 
 
 
-9. Realitzar un programa que contingui una funció que retorni la suma total dels salaris dels empleats d’un departament en concret. El codi del departament s’ha d’introduir per teclat per part de l’usuari i el bloc anònim ha de cridar a una funció que realitzarà el càlcul de la suma. Aquesta funció rebrà el nom de SUMA_TOTAL.
-
+--9. Make a program that contains a function that returns the total sum of the salaries of the employees of a specific department. The code of the department must be entered by keyboard by the user and the anonymous block must call a function that will perform the calculation of the sum. This function will be called SUM_TOTAL.
 
 
 
@@ -460,17 +324,16 @@ end sumatotal;
 
 
 
-10. Realitzar un programa que ens modifiqui el valor de la comissió d’un empleat que s’introdueixi per teclat. Per a modificar aquesta comissió hem de tenir en compte que: 
-   1. Si el salari és menor a 1000, se li afegeix el 10%.
-   2. Sii el salari està entre 1000 i 1500, se li afegeix el 15 %. 
-   3. Si el salari és major a 1500, se li afegeix el 20%. 
-   4. En cas contrari, es posa la comissió a 0.
+--10. Make a program that changes the value of an employee's commission that is entered by keyboard. To modify this commission we must keep in mind that:
+--    1. If the salary is less than 1000, 10% is added.
+--    2. If the salary is between 1000 and 1500, 15% is added.
+ --   3. If the salary is greater than 1500, 20% is added.
+ --   4. Otherwise, the commission is set to 0.
 
 
 
 
-Le he puesto una comprobación, si el commission_pct es null printeara que no tiene comision y no hará la operación
-
+-- I have used an extra check functionality, if the commission_pct is null it will print that it has no commission and will not do the operation
 
 set SERVEROUTPUT ON;
 accept idempleat prompt 'Introduce el id del empleado a consultar';
@@ -490,13 +353,6 @@ end;
 
 
 
-
-
-
-
-
-
-
 create or replace function buscarnombre(idempleat number)
 return varchar2
 is 
@@ -506,9 +362,6 @@ begin
   return nombre;
 end buscarnombre;
 /
-
-
-
 
 
 
@@ -534,8 +387,6 @@ begin
   return comissio;
 end buscarcomisio;
 /
-________________
-
 
 
 
