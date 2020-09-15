@@ -1,7 +1,7 @@
 -- *** 1. ***
--- Crear una funció que indicant el tipus de transport que s’ha fet servir durant un trasllat (terrestre, --train, avió) ens retorni el càlcul total del cost*kms d’aquells trasllat que s’ha fet per aquest tipus --de transport. 
---Aquesta funció es cridarà dins un procediment emmagatzemat que printarà per el cost total pel tipus de --transport introduït.
---Per finalitzar, aquest procediment es cridarà des d’un bloc anònim, que demanarà el tipus de transport --per pantalla.
+-- Create a function that indicates the type of transport that has been used during a transfer (land, --train, plane) returns the total calculation of the cost * kms of those transfers that have been made for this type --of transport.
+--This function will be called within a stored procedure that will print for the total cost for the type of --transport introduced.
+--Finally, this procedure will be called from an anonymous block, which will ask for the type of transport --by screen.
 
 set serveroutput on;
 
@@ -64,13 +64,13 @@ end imprimircost;
 
 
 -- *** 2. ***
---Hem de crear un procediment que donant-li un codi de destí i un any sencer (per exemple 2016) ens 
---indiqui la quantitat  de residus que s'han traslladat a aquell destí durant aquell any.
---Per fer aquest exercici et proposo que realitzis una funció, un procediment i per últim un bloc 
---anònim. Aquest últim ha de ser del tipus:
-  --begin
-    --nom_procedure (dada1, dada2)
-    --end;
+--We need to create a procedure that by giving you a destination code and an entire year (e.g. 2016) we
+--indicate the amount of waste that has been moved to that destination during that year.
+--To do this exercise I suggest you perform a function, a procedure and finally a block
+--anonymous. The latter must be of the type:
+   --Look
+     --procedure_name (data1, data2)
+     --end;
 
 accept anio number prompt 'introduce un año';
 accept destinationcode number prompt 'introduce el codigo de destino';
@@ -166,9 +166,9 @@ end residuos_poraño;
 
 
 -- *** 3. ***
---Realitzar un procediment anomenat “multipliqueitor” que rebi un nombre  i mostri la seva  taula de 
---multiplicar.
---Aquest procediment es cridarà des d’un bloc anònim.
+--Perform a procedure called "multiplier" that receives a number and displays its table of
+--multiply.
+--This procedure will be called from an anonymous blog.
 
 accept numero prompt 'Introduce un numero y te mostrare la tabla de multiplicar'
 declare
@@ -188,14 +188,9 @@ end mostrartabla;
 /
 
 
-
-
-
-
 -- *** 4. ***
--- Realitza una procediment anomenat “mostrarlletres” que mostri les tres primeres lletres d'un paraula --introduida per pantalla. 
---Aquest procediment es cridarà des d’un bloc anònim.
-
+-- Perform a procedure called "show letters" that shows the first three letters of a word - entered on the screen.
+--This procedure will be called from an anonymous blog.
 accept palabra CHAR prompt 'Introduce una palabra';
 declare
 palabrita VARCHAR2(30) := '&palabra'; 
