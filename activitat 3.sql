@@ -1,6 +1,5 @@
-﻿Activitats
-1. Crea un funció a la qual és passarà el department_id i retornarà el nom del manager_id. Has de fer el codi de la funció i del bloc anònim.
-
+--Activities
+--1. Create a function to which the department_id will pass and return the manager_id name. You have to do the function code and the anonymous block.
 
 
 
@@ -28,16 +27,7 @@ end buscarmanager;
 
 
 
-
-________________
-
-
-
-
-
-
-2. Crea una funció que donat un employee_id, retorni la quantitat de tasques realitzades per l'empleat. Has de fer el codi de la funció i del bloc anònim.
-
+-- 2. Create a function that given an employee_id, returns the number of tasks performed by the employee. You have to make the function code and the blog anonymous.
 
 
 
@@ -86,10 +76,10 @@ ________________
 
 
 
-3. Crea un procediment que augmenti el salari d'un empleat, que es demanarà en un bloc anònim. Aquest procediment té les següents condicions:
-   1. Si l'experiència és més gran de 10 anys, s'augmentarà el salari un 20%
-   2. Si l'experiència és més gran de 5 anys, s'augmentarà el salari un 10%
-   3. Per la resta, s'augmentarà un 5%.
+--3. Create a procedure that increases an employee’s salary, which will be requested in an anonymous block. This procedure has the following conditions:
+--    1. If the experience is more than 10 years, the salary will be increased by 20%
+--    2. If the experience is more than 5 years, the salary will be increased by 10%
+--    3. For the rest, it will increase by 5%.
 
 
 
@@ -162,21 +152,7 @@ end buscarnombre;
 /
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4. Crea un procediment que intercanviï els salaris entre dos empleats. Aquests empleats es demanaran en un programa independent a l'usuari.
+-- 4. Create a procedure that exchanges salaries between two employees. These employees will be asked in a program independent of the user.
 
 
 accept empleado1 number prompt 'Introduce el id del primer empleado';
@@ -224,17 +200,7 @@ begin
 end buscarnombre;
 /
 
-
-
-
-
-
-
-
-
-
-5. Crear un procediment que donat un department_id, comprova quin és l'empleat d'aquest departament amb el salari més alt i actualitzi el manager_id d'aquest departament amb aquest empleat. Has de fer el codi de la funció i del bloc anònim.
-
+-- 5. Create a procedure that given a department_id, check who is the employee of that department with the highest salary and update the manager_id of that department with that employee. You have to make the function code and the blog anonymous.
 
 
 
