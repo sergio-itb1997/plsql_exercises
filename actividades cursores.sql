@@ -1,4 +1,4 @@
-﻿1. Programar un bloc que ens retorni els empleats on el salari sigui més gran al valor que s’introdueix per teclat. S’ha de controlar mitjançant una funció anomenada CONTROLAR_NEGATIU, si el salari que s’introdueix per teclat és negatiu o no. En cas de que no sigui negatiu s’ha de mostrar el codi, nom i salari de l’empleat, en cas contrari s’ha d’imprimir “ERROR: salari negatiu i ha de ser positiu”.
+--﻿1. Code a block to return employees where the salary is greater than the value entered by keyboard. It must be controlled by a function called CONTROL_NEGATIVE, whether the --salary entered by keyboard is negative or not. If it is not negative, the employee's code, name and salary must be displayed, otherwise "ERROR: negative salary and must be --positive" must be printed.
 
 
 
@@ -47,7 +47,7 @@ end controlar_negatiu;
 ________________
 
 
-2. Programar un bloc que introdueixi un empleat a la taula corresponent. Les dades de l’empleat s’ha d’introduir per teclat. Al mateix script s’ha de comprovar que s’ha realitzat correctament la inserció, a més de mantenir informat a l’usuari constantment (fent ús de cursors implícits).
+--2. Code a block that an employee enters in the appropriate table. Employee data must be entered by keyboard. In the same script it must be verified that the insertion has been carried out correctly, in addition to keeping the user constantly informed (using implicit cursors).
 
 
 
@@ -124,10 +124,10 @@ insert into employees (manager_id) values(manageremp);
 dbms_output.put_line('Usuario insertado correctamente');
 
 
--- ABRIMOS EL CURSOR
+-- OPENING THE CURSOR
 open emp_cursor;    
 loop     
--- INTRODUCIMOS LOS DATOS QUE TIENE EL CURSOR EN LAS VARIABLES
+-- FETCHING THE CURSOR
 fetch emp_cursor      
 into emp_id, emp_name, emp_cognom, emp_job_id , emp_sal, emp_man, emp_dep;      
 exit when emp_cursor%notfound;      
@@ -142,7 +142,7 @@ dbms_output.put_line('MANAGER: '||emp_man);
 dbms_output.put_line('');   
 end loop;
 close emp_cursor;
--- CERRRAMOS EL CURSOR
+-- CLOSING THE CURSOR
 
 
 end if;
@@ -169,7 +169,7 @@ end;
 /
 
 
---COMPROBAMOS SI EXSTE EL JOB_ID 
+--CHECK JOB ID
 create or replace function comprobar_jobid(jobidemp jobs.job_id%type)
 return boolean
 is 
@@ -187,7 +187,7 @@ end comprobar_jobid;
 
 
 
--- COMPROBAMOS SI EXISTE EL EMPLEADO
+-- CHECK EMPLOYEE
 create or replace function comprobar_idemp(idemp employees.employee_id%type)
 return boolean
 is 
@@ -207,7 +207,7 @@ end comprobar_idemp;
 
 
 
--- COMPROBAMOS SI EXISTE MANAGER
+-- CHECK MANAGER
 create or replace function comprobar_manageremp(manageremp employees.manager_id%type)
 return boolean
 is 
@@ -227,7 +227,7 @@ end comprobar_manageremp;
 
 
 
--- COMPROBAMOS SI EXISTE DEPARTAMENTO
+-- CHECK DEPARTMENT
 create or replace function comprobar_deptemp(deptemp employees.department_id%type)
 return boolean
 is 
@@ -245,7 +245,7 @@ end comprobar_deptemp;
 
 
 
--- COMPROBAMOS QUE EL SALARIO SEA POSITIVO
+-- VERIFY THAT THE SALARY IS NOT NEGATIVE
 create or replace function controlar_negatiu(salaryemp number)
 return boolean
 is
@@ -265,15 +265,7 @@ end controlar_negatiu;
 select * from employees;
 
 
-
-
-________________
-________________
-
-
-
-
-3 -- Programar un  bloc que actualitzi el salari en 200 de l’empleat que s'introdueix per teclat. A més, s’ha de realitzar l’actualització si la comissió no és nul·la. Al mateix script s’ha de comprovar que s’ha realitzar correctament l’actualització. No oblidar de mantenir informat a l’usuari corresponent (fent ús dels cursors implícits).
+-- 3 Code a block that updates the salary of 200 of the employee entered by keyboard. In addition, the update must be performed if the commission is not zero. The same script ---should verify that the update was successful. Don't forget to keep the corresponding user informed (using the implicit cursors).
 
 
 accept empId prompt 'Introduce el id de empleado: '
@@ -322,7 +314,7 @@ end;
 
 
 
--- COMPROBAMOS SI EXISTE LA COMISION
+-- CHECK COMISSION
 create or replace function comprovar_comision(idemp employees.employee_id%type)
 return boolean
 is 
@@ -340,7 +332,7 @@ end comprovar_comision;
 
 
 
--- COMPROBAMOS SI EXISTE USUARIO
+-- CHECK USER
 create or replace function comprobar_idemp(idemp employees.employee_id%type)
 return boolean
 is 
@@ -359,7 +351,7 @@ end comprobar_idemp;
 drop procedure aumentar_salario;
 
 
--- AUMENTAMOS SALARIO
+-- RAISE SALARY
 create or replace procedure actualizar_salario(v_empid employees.employee_id%type)
 is
 v_salari employees.salary%type;
@@ -388,7 +380,7 @@ end;
 
 
 
-4.  Programar un bloc que elimini l’empleat que s'introdueix per teclat. No oblidar de mantenir informat a l’usuari constantment (fent ús dels cursors implícits).
+--4.  Code a block that eliminates the employee entering by keyboard. Don't forget to keep the user informed (using implicit cursors).
 
 
 
@@ -445,7 +437,7 @@ select * from employees;
 
 
 
--- COMPROBAMOS SI EXISTE USUARIO
+-- CHECK USER
 create or replace function comprobar_idemp(idemp employees.employee_id%type)
 return boolean
 is 
@@ -463,7 +455,7 @@ end comprobar_idemp;
 
 
 
--- eliminamos
+-- DEELETING USER
 create or replace procedure eliminar(idemp employees.employee_id%type)
 is
 begin
@@ -478,7 +470,7 @@ ________________
 
 
 
-5. Programar un bloc que comprovi si un empleat existeix a la taula corresponent o no i no oblidar donar els missatges corresponents a l’usuari (fent ús dels cursors implícits).
+-- 5. Code a block to check if an employee exists in the corresponding table or not and do not forget to give the corresponding messages to the user (using the implicit cursors).
 
 
 accept empId prompt 'Introduce el id del empleado'
@@ -540,12 +532,12 @@ end comprobar_idemp;
 
 
 
-6  Programar un bloc que determini els empleats amb salaris superiors al salari que s'introdueix per teclat (s’ha de tenir en compte que pot haver salaris nuls).
+-- 6  Code a block that determines employees with higher salaries than the salary entered by keyboard (it should be noted that there may be zero salaries).
 
 
 
 
-accept empSalary prompt 'Introduce un salario y te dire cuantos currelas cobran mas que la cantidad indicada'
+accept empSalary prompt 'Introduce un salario y te dire cuantos trabajadores cobran mas que la cantidad indicada'
 declare
 
 
@@ -578,9 +570,9 @@ if controlar_negatiu(salaryemp) = false then
    dbms_output.put_line('');
    end loop;
    close emp_cursor;
-  dbms_output.put_line('Hay ' || emp_sueldo_superior_a(salaryemp) || ' currelas cobrando mas de ' || salaryemp || '€');
+  dbms_output.put_line('Hay ' || emp_sueldo_superior_a(salaryemp) || ' trabajadores cobrando mas de ' || salaryemp || '€');
   else 
-  dbms_output.put_line('No hay ningun currela cobrando mas del salario indicado');
+  dbms_output.put_line('No hay ningun trabajador cobrando mas del salario indicado');
   end if;
 else   
   raise salario404;
@@ -591,7 +583,7 @@ end;
 /
 
 
--- contamos cuantos currelas hay cobrando mas del salario que le hemos pasado
+-- we count how many workers there are charging more than the salary that we have paid
 create or replace function emp_sueldo_superior_a(salario employees.salary%type)
 return number
 is
@@ -603,7 +595,7 @@ end emp_sueldo_superior_a;
 /
 
 
--- controlamos que el salario sea positivo
+-- VERIFY NEGATIVE SALARY
 create or replace function controlar_negatiu(salaryemp number)
 return boolean
 is
@@ -618,14 +610,11 @@ return negatiu;
 end if;
 end controlar_negatiu;
 /
-________________
 
 
 
 
-
-
-7 Programar un bloc principal per a seleccionar el nom de l'empleat amb un valor de salari concret (que s’introdueix per teclat). Controlar si retorna més d’una fila, no retorna cap dada o qualsevol altre error.
+-- 7 Code a main block to select the employee's name with a specific salary value (entered by keyboard). Check if it returns more than one row, does not return any data or any --other error.
 
 
 accept empSalary prompt 'Introduce un salario para ver que empleados cobran esa cantidad'
@@ -661,9 +650,9 @@ if controlar_negatiu(salaryemp) = false then
    dbms_output.put_line('');
    end loop;
    close emp_cursor;
-  dbms_output.put_line('Hay ' || emp_sueldo_igual_a(salaryemp) || ' currelas cobrando ' || salaryemp || '€');
+  dbms_output.put_line('Hay ' || emp_sueldo_igual_a(salaryemp) || ' trabajador cobrando ' || salaryemp || '€');
   else 
-  dbms_output.put_line('No hay ningun currela cobrando mas del salario indicado');
+  dbms_output.put_line('No hay ningun trabajador cobrando mas del salario indicado');
   end if;
 else    
   raise salario404;
@@ -676,7 +665,7 @@ end;
 /
 
 
--- contamos cuantos currelas hay cobrando mas del salario que le hemos pasado
+-- we count how many workers there are charging more than the salary that we have paid
 create or replace function emp_sueldo_igual_a(salario employees.salary%type)
 return number
 is
@@ -688,7 +677,7 @@ end emp_sueldo_igual_a;
 /
 
 
--- controlamos que el salario sea positivo
+-- verify positive salary
 create or replace function controlar_negatiu(salaryemp number)
 return boolean
 is
@@ -706,22 +695,14 @@ end controlar_negatiu;
 
 
 
-
-
-
-________________
-
-
-
-
-8 Programar un bloc PL/SQL que consulti les dades de la taula departament i de la taula empleat i els doni d’alta a una nova taula DEPTEMP (aquesta taula es una taula física SQL i no una PL/SQL). Els passos a seguir son els següents: 
-   1. Abans de començar el bloc principal:
-      1. Crear amb sentències DDL la taula DEPTEMP, que ha de contenir tots els camps de la taula (DEPT) i el codi i nom dels empleats (taula EMP). L’ordre de creació dels camps ha de ser: detpno, dname, loc, empno i ename. 
-      2. Abans de crear la taula, hem d’assegurar-nos que la taula no estigui donada d’alta, és a dir, esborrar-la abans. 
-      3. Aquesta taula DEPTEMP, només ha de contenir la estructura, és a dir, no ens interessa els registres. Per tant, s’ha d’esborrar els registres de la taula, després de crear-la. 
-      4. Comprovar que la taula DEPTEMP està buida. 
-      5. Comença el bloc PL/SQL: en aquest bloc PL/SQL s’ha de consultar les dades corresponents a ambdós taules (deptno, dname, loc, empno i ename) e inserir-los a la nova taula creada (DEPTEMP). 
-      6. Quan s’acabi el bloc PL/SQL: Comprovar que la nova taula ja conté registres
+--8 Schedule a PL / SQL block that queries the data in the department table and the table used and registers it in a new DEPTEMP table (this table is a physical SQL table and not --a PL / SQL). The steps to follow are as follows:
+--   1. Before starting the main block:
+ --     1. Create the DEPTEMP table with DDL statements, which must contain all the fields in the table (DEPT) and the code and name of the employees (EMP table). The order in --which the fields were created must be: detpno, dname, loc, empno, and ename.
+ --     2. Before creating the table, we must make sure that the table is not registered, that is, delete it beforehand.
+  --    3. This table DEPTEMP, only has to contain the structure, that is to say, we are not interested in the records. Therefore, the records in the table must be deleted after --creating it.
+--      4. Check that the DEPTEMP table is empty.
+ --     5. Start the PL / SQL block: in this PL / SQL block you must consult the data corresponding to both tables (deptno, dname, loc, empno and ename) and insert them in the --newly created table (DEPTEMP).
+--      6. When the PL / SQL block is finished: Check that the new table already contains records
 
 
 
@@ -766,11 +747,8 @@ end;
 
 
 
-9 Programar un bloc que imprimeix els nom i els lloc de tots els departaments. Aquest exercici s’ha de fer amb la clàusula: 
-   1. OPEN, FETCH, CLOSE 
-
-
-
+--9 Schedule a block that prints the names and locations of all departments. This exercise must be done with the clause:
+ --   1. OPEN, FETCH, CLOSE
 
 
 
@@ -826,7 +804,7 @@ ________________
 
 
 
-10. Programar un bloc que ens retorni tots els empleats que hi ha a la taula corresponent. S’ha de mostrar les següents dades: codi, nom, salari, comissió i data d’alta.
+-- 10. Code a block that returns all the employees in the corresponding table. The following information must be provided: code, name, salary, commission and registration date.
 
 
 
@@ -857,8 +835,8 @@ end;
 ________________
 
 
-11. Programar un bloc que imprimeix tots els empleats de la taula corresponent, simplement els camps: codi i nom de l’empleat i codi i nom del departament al que pertany. Aquest exercici s’ha de fer amb la clàusula: 
-   1. OPEN, FETCH, CLOSE 
+--11. Code a block that prints all the employees in the corresponding table, simply the fields: code and name of the employee and code and name of the department to which it belongs. This exercise must be done with the clause:
+   -- 1. OPEN, FETCH, CLOSE
 
 
         
@@ -891,14 +869,6 @@ end;
 
 
 
-
-
-
-
-
-   2. FOR … IN …
-
-
 declare 
 cursor empcursor is
 select e.employee_id, e.first_name, e.department_id, d.department_name
@@ -923,7 +893,7 @@ end;
 ________________
 
 
-12. Programar un bloc que imprimeix el codi i nom dels empleats d’un departament concret que s’ha d’introduir per teclat el codi del departament. Aquest exercici s’ha de fer amb CURSORS AMB PARÀMETRES i els paràmetre que s’ha de passar és el codi de departament que l’usuari introdueixi per teclat.
+--12. Code a block that prints the code and name of the employees of a specific department to enter the department code by keyboard. This exercise must be done with CURSORS WITH PARAMETERS and the parameters to be passed are the department code that the user enters by keyboard.
 
 
 
@@ -958,39 +928,7 @@ exit when deptcursor%notfound;
 ________________
 
 
-
-
-13 Programar un bloc principal que ens retorni els salaris que hi ha a la taula empleats. Se li ha d’aplicar un 18 % a cadascun dels salaris. Els passos a seguir són els següents:
-   1. Crear una taula anomenada emp_salari_nou i ha de contenir la mateixa estructura i registre que la taula emp. 
-   2. Al bloc PL/SQL s’ha de tenir una taula PL/SQL (que no té res a veure amb les taules físiques de la base de dades) per emmagatzemar tots els salaris dels empleats de la taula. Per tant, aquesta taula és temporal i serveix per fer el càlcul; després els resultats s’ha d’emmagatzemar a la nova taula emp_salario_nou. 
-   3. Calcular el 18% del salari e imprimir-lo per pantalla, una vegada que ja s’han actualitzat a la taula emp_salari_nou. Per pantalla ha de sortir de la següent manera:  
-El nou salari serà: 5800
-El nou salari serà: 3306
-El nou salari serà: 2842
-
-
-
-
-
-
-actualizar un salario 
-
-
-
-
-no se hace
-________________
-
-
-
-
-
-
-14. Programar un bloc que ens modifiqui totes les comissions dels empleats sumant 20 als empleats on el codi de departament coincideix amb el que s’introdueix per teclat.
-
-
-
-
+--14. Code a block that modifies all of our employee commissions by adding 20 to the employees where the department code matches what is entered by keyboard.
 
 
 accept deptid prompt 'Introduce el id del departamento'
@@ -1024,8 +962,7 @@ ________________
 
 
 
-15. Programar un bloc que ens actualitza la comissió el 18% de tots els empleats que tingui comissió assignada. 
-
+--15. Code a blog that updates us commission 18% of all employees who have commission assigned.
 
 
 
