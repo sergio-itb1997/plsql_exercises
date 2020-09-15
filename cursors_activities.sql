@@ -1,10 +1,6 @@
 --﻿1. Code a block to return employees where the salary is greater than the value entered by keyboard. It must be controlled by a function called CONTROL_NEGATIVE, whether the --salary entered by keyboard is negative or not. If it is not negative, the employee's code, name and salary must be displayed, otherwise "ERROR: negative salary and must be --positive" must be printed.
 
 
-
-
-
-
 accept salario prompt 'Introduce el salario';
 declare
 esNegatiu exception;
