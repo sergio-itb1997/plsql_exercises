@@ -1,7 +1,6 @@
-﻿-- 1 Programar un bloc principal i un procediment per a consultar les dades de l’empleat. El codi de l’empleat s’introduirà per teclat. El bloc anònim preguntarà a l’usuari i cridarà al procediment passant al paràmetre corresponent. El procediment consultarà la taula empleat i recuperarà les següents dades: nom, salari, comissió, ofici i cap. 
-En cas de que la comissió sigui nul·la, ha d’aparèixer 0 i no en blanc.
-El procediment s’anomenarà imprimir_dades.
-A més, s’ha de controlar si existeix o no l’empleat a la base de dades. (Gestió d’errors)
+-- 1 Code a main block and a procedure for consulting employee data. The employee code will be entered by keyboard. The anonymous blog will ask the user and call the procedure by going to the corresponding parameter. The procedure will consult the employee table and retrieve the following data: name, salary, commission, trade and boss.En cas de que la comissió sigui nul·la, ha d’aparèixer 0 i no en blanc.
+--The procedure will be called data_printing.
+--In addition, it must be checked whether or not the employee exists in the database. (Error handling)
 
 
 
@@ -62,8 +61,7 @@ end imprimir;
 
 
 
--- 2  Programar el mateix exercici que l’anterior però ara el subprograma serà una funció anomenarà retornar_dades. La funció no imprimirà cap dada, sinó que retornarà una variable de tipus registre.
-S’ha de controlar els possibles errors (com abans) però ara a la funció.
+-- 2 Code the same exercise as above but now the subprogram will be a function called return_data. The function will not print any data, but will return a variable of type record.S’ha de controlar els possibles errors (com abans) però ara a la funció.
 
 
 
@@ -116,11 +114,10 @@ end retornar_dades;
 
 
 
-
--- 3 Programar un bloc que ens indiqui si existeix o no un departament introduït per pantalla a la nostra base de dades. S’ha de tenir en compte els següents aspectes: 
-   1. el codi del departament ho introduirà l’usuari per teclat.
-   2. Per comprovar si existeix o no el departament, s’ha de programar una funció anomenada COMPROVAR_DEPT. A aquesta funció se li passarà per paràmetre des del bloc principal el codi del departament a comprovar. 
-   3. El missatge que s’ha de mostrar és el següent: “EXISTEIX DEPARTAMENT” o “NO EXISTEIX DEPARTAMENT”.
+-- 3 Code a block that tells us whether or not there is a department entered by screen in our database. The following aspects must be taken into account:
+--    1. the code of the department will be entered by the user by keyboard.
+--    2. To check whether or not the department exists, a function called CHECK_DEPT must be programmed. This function will be passed as a parameter from the main block to the code of the department to be checked.
+--    3. The message to display is: "DEPARTMENT EXISTS" or "NO DEPARTMENT".
 
 
 accept dept_id number prompt 'Introduce el ID del departamento';
@@ -161,8 +158,7 @@ ________________
 
 
 
--- 4  Programar un bloc que insereixi les dades d’un departament a la taula corresponent.  Aquestes dades les ha d’introduir l’usuari per teclat. Abans d’inserir el departament, s’ha de comprovar si existeix o no el departament a la base de dades (per fer aquesta comprovació ens ajudarem de la funció que s’ha creat a l’exercici anterior, COMPROVAR_DEPT).
-
+-- 4 Code a block that inserts the data of a department in the corresponding table. This data must be entered by the user by keyboard. Before inserting the department, you must check whether or not the department exists in the database (to do this check we will use the function that was created in the previous exercise, CHECK_DEPT).
 
 
 
@@ -208,8 +204,7 @@ end comprovar_dept;
 /
 
 
--- 5 Programar un bloc plsql que modifiqui la taula DEPT(que serà una còpia de la taula departments)  on el codi del departament coincideixi amb el que s’introdueixi per teclat i desar els canvis. Controlar les excepcions corresponents, és a dir, si no existeix el departament o qualsevol altre error.
-
+-- 5 Code a plsql block that modifies the DEPT table (which will be a copy of the departments table) where the department code matches the one entered by keyboard and save the changes. Check the corresponding exceptions, that is, if the department or any other error does not exist.
 
 create table dept as select * from DEPARTMENTS;
 
@@ -285,14 +280,7 @@ end comprovar_location;
 
 
 
-
-
-
-________________
-
-
- -- 6 Programar un bloc plsql  que pregunti a l’usuari el codi de l’empleat per tal de retornar el nom de l’empleat. El nom de l’empleat ho retornarà una funció que es crearà anomenada NOM. A aquesta funció se li passarà per paràmetre el codi de l’empleat que l’usuari ha introduït per teclat. A més, s’ha de controlar els errors al bloc anònim.
-
+-- 6 Code a plsql block that asks the user for the employee code in order to return the employee name. The employee name will be returned by a function that will be created called NAME. This function will be used to set the employee code that the user entered by keyboard. In addition, errors must be checked in the anonymous blog.
 
 SET SERVEROUTPUT ON
 SET ECHO OFF
@@ -339,16 +327,12 @@ begin
 /
 
 
--- 7 Programar un bloc plsql  que ens comprovi si un departament existeix o no a la taula corresponent, consultant pel codi del departament. En cas d’existir el departament s’ha d’imprimir per pantalla i s’ha de comprovar si comença o no per la lletra A. Si comença per la lletra A, després d’imprimir el nom del departament, ha de dir, COMENÇA PER LA LLETRA A.  Observacions:
-1. per a comprovar si comença el nom del departament per A, s’ha de programar una excepció i ha de rebre el nom de: noconteA.
-2. A més, també s’ha de programar les següents excepcions:
-   1. Si no hi ha dades, s’ha de retornar: “ERROR: no dades”.
-   2. Si retorna més d’una fila: “ERROR: retorna més files” 
-   3. Qualsevol altre error: “ERROR (sense definir)”.
-
-
-
-
+-- 7 Code a plsql block to check if a department exists or not in the corresponding table, consulting the code of the department. If the department exists, it must be printed on the screen and it must be checked whether or not it begins with the letter A. If it begins with the letter A, after printing the name of the department, it must say, START WITH THE LETTER A. Observations:
+--1. to check if the department name starts with A, an exception must be programmed and it must be named: noconteA.
+--2. In addition, the following exceptions must also be scheduled:
+--    1. If there is no data, the following must be returned: "ERROR: no data".
+--    2. If you return more than one row: "ERROR: returns more rows"
+--    3. Any other error: “ERROR (undefined)”.
 
 
 set serveroutput on;
@@ -383,7 +367,7 @@ is
   return false;  
   end;
   /
-  
+ 
   
   accept iddept number prompt 'Introdueix el id del departament';
   declare
