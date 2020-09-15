@@ -1,6 +1,4 @@
-1. crea un bloc anònim amb variables no PL/SQL que mostri el nom del departament al que pertany l’empleada Pat Fay.
-
-
+--1. create an anonymous block with non-PL / SQL variables that displays the name of the department to which employee Pat Fay belongs.
 
 
 set serveroutput on
@@ -16,7 +14,7 @@ end;
 print v_department;
 
 
-2. Crea un bloc anònim amb variables no PL/SQL que demani a l’usuari el seu id, i que retorni a quina regió pertany. 
+--2. Create an anonymous block with non-PL / SQL variables that asks the user for their id, and returns to which region it belongs to.
 
 
 accept var_pregunta prompt 'introduce el id del user'
@@ -41,25 +39,7 @@ print v_region;
 
 
 
-
-3. Crea un bloc anònim amb una variable de tipus alfanumèric. EL resultat és que ha de printar per pantalla :           
-HOLA MUNDO           
-FIN DEL PROGRAMA*/
-
-
-
-
-
-
-________________
-
-
-
-
-
-
-4. Crea un bloc anònim amb dos variables de tipus NUMBER. Aquestes variables s’ha de tenir un valor inicial de 10.2 i 20.1 respectivament. El bloc ha de sumar aquestes dues variables i mostrar per pantalla ‘LA SUMA TOTAL ÉS: 30.3’ 
-
+--4. Create an anonymous block with two NUMBER variables. These variables must have an initial value of 10.2 and 20.1, respectively. The block must add these two variables and display on the screen â€˜THE TOTAL SUM IS: 30.3â€™
 
 
 
@@ -77,18 +57,7 @@ end;
 
 
 
-
-
-
-5. Crea un bloc anònim que ha de llistar tots el noms (FIRST_NAME) dels empleats de la taula (EMPLOYEES) en majúscules , on has de declarar una variable de tipus first_name. 
-
-
-no se puede almacenar ya que una variable no puede contener mas de un valor
-
-
-6. Crea un bloc anònim que contingui una variable constant anomenada Percentatge amb  un  valor  de  10  Aquest  valor  és  un  10%  .        Aquest  bloc  ha  de  contenir  una variable de tipus rowtype, de la taula employees. Dins aquest bloc, augmentaràs el sou a l’empleat que introdueixi un usuari i mostrarà per pantalla el següent:  “ S’ha realitzat un augment de sou a: L’usuari amb id: “id_usuari” L’usuari amb Nom: “first_name” i cognom “last_name” que pertany al departament  “id_department””
-________________
-
+-- 6. Create an anonymous block that contains a constant variable called Percentage with a value of 10 This value is 10%. This block must contain a rowtype variable, from the employees table. Within this block, you will increase the salary of the employee who enters a user and will display on the screen the following: â€œA salary increase has been made to: The user with id:â€œ user_id â€The user with Name:â€œ first_name â€And last nameâ€œ last_name â€belonging to departmentâ€œ id_department â€â€
 
  
 set serveroutput on
@@ -119,8 +88,7 @@ end;
 
 
 
-7. Programar un bloc que ens pregunti pel nom, cognom i edat d’una persona. Posteriorment s’ha d’imprimir les dades corresponents a la persona. No s’ha de d’oblidar de netejar les variables quan s’acabi el bloc PL/SQL, fent ús de la comanda UNDEFINE <nom_variable>). 
-
+-- 7. create a block that asks for a person's first and last name. Then the data corresponding to the person must be printed. Don't forget to clear the variables when the PL / SQL block is finished, using the UNDEFINE command <variable_name>).
 
 set serveroutput on
 accept nombre prompt 'Selecciona nombre';
@@ -144,18 +112,12 @@ UNDEFINE edad;
 
 
 
-
-
-
-
-
-8. Calcular el 18% d’un preu que introdueix per teclat. Mostrar el resultat amb una variable de HOST o no PL/SQL. Printar el resultat arrodonit fent ús d’aquesta variable no PL/SQL i no declarar cap variable de programa. Esborrar les variables no PL/SQL. 
-
+-- 8. Calculate 18% of a price you enter per keyboard. Show the result with a HOST variable or not PL / SQL. Print the rounded result using this non-PL / SQL variable and do not declare any program variables. Delete non-PL / SQL variables.
 
 
 
 set serveroutput on
-accept cifra prompt 'Calcularé el 18% de la cifra que me dirás ahora'
+accept cifra prompt 'CalcularÃ© el 18% de la cifra que me dirÃ¡s ahora'
 variable cifra number;
 variable total number;
 begin
@@ -168,17 +130,9 @@ undefine total;
 
 
 
+-- 9. Calculate 18% of a price you enter per keyboard. Print the ROUNDED result within the program.
 
-
-
-
-
-
-
-9. Calcular el 18% d’un preu que introdueix per teclat. Imprimir el resultat ARRODONIT  dins del programa.
-
-
-accept cifra prompt 'Calcularé el 18% de la cifra que me dirás ahora'
+accept cifra prompt 'CalcularÃ© el 18% de la cifra que me dirÃ¡s ahora'
 declare 
   var_total number;
 begin
@@ -188,22 +142,11 @@ end;
 /
 
 
-
-
-
-
-________________
-
-
-
-
-
-
-10. Preguntar a l’usuari el salari i la comissió que guanya. I si salari:
-   1. és menor que 100 ? la comissió serà el salari aplicant un 10%
-   2. està entre 100 i 500 ? la comissió serà el salari aplicant un 15%.
-   3. és major que 1000 ? la comissió serà el salari aplicant un 20%.
-Al  final imprimir el salari i la nova comissió. 
+--10. Ask the user about the salary and the commission they earn. And salaries:
+ --   1. is less than 100? the commission will be the salary applying 10%
+  --  2. is it between 100 and 500? the commission will be the salary applying 15%.
+  --  3. is it greater than 1000? the commission will be the salary applying 20%.
+--In the end print the salary and the new commission.
 
 
 accept salario prompt 'Introduce tu salario y te calculare la comision:'
@@ -224,23 +167,18 @@ if salary < 1000 then
   else
     comision:= salary*1.20;
     end if;
-  dbms_output.put_line('Tu salario base: '||salary||'. Tu salario con la comisión aplicada: '||comision);
+  dbms_output.put_line('Tu salario base: '||salary||'. Tu salario con la comisiÃ³n aplicada: '||comision);
 end;
 / 
 
 
 
-
-
-
-
-
-11. Preguntar a l’usuari la seva edat i donar el missatge corresponent, si:
-   1. Menor de 18 ? ets menor de edat!
-   2.  = 18 ? casi ets major de edat!
-   3.  >18 ?ja ets major de edat!
-   4.  >40 ? ja ets més major …
-   5.  Si és negatiu => error edat no pot ser negativa.
+--11. Ask the user their age and give the corresponding message, if:
+ --   1. Under 18? you are a minor!
+ --   2. = 18? you are almost of age!
+ --   3.> 18? You are of legal age!
+ --   4.> 40? you are olderâ€¦
+ --   5. If it is negative => age error cannot be negative.
 
 
 accept v_edad prompt 'Introduce tu edad muerto de hambre'
@@ -271,29 +209,19 @@ end;
 
 
 
-
-
-
-________________
-
-
-
-
-
-
-12. Programar un bloc que demani un número i el programa ha de realitzar les següents operacions amb aquest número. Les operacions han de ser independents i són:
-   1. sumar-li 4.
-   2. Restar-li 3.
-   3. Multiplicar-li 8.
-S’ha de tenir en compte que per a programar aquest exercici:
-* utilitzar una constant i assignar-li el número introduït per teclat.
-* fer ús d’una variable per a cada operació
-* imprimir per pantalla els resultats corresponents a cada operació, posant el literal al davant de Suma, Resta i Multiplicació respectivament
+--12. Code a block that asks for a number and the program must perform the following operations with that number. The operations must be independent and are:
+--    1. add to it 4.
+--    2. Subtract 3.
+--    3. Multiply it 8.
+-- Please note that to schedule this exercise:
+-- * use a constant and assign the number entered by keyboard.
+-- * make use of a variable for each operation
+-- * print on the screen the results corresponding to each operation, putting the literal in front of Addition, Subtraction and Multiplication respectively
 
 
 
 
-accept v_numero prompt 'Introduce un numero y haré magia'
+accept v_numero prompt 'Introduce un numero'
 
 
 declare 
@@ -323,31 +251,7 @@ end;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-13. Programar un bloc en PL/SQL que demani a l’usuari el valor de dos números. Aquest dos números se li assigna dos variables PL/SQL (en el moment de la declaració). Els dos números han de ser positius, en cas contrari s’ha de donar a l’usuari el missatge corresponent. S’ha de realitzar una operació amb aquest números: dividir entre ells i sumar-li el segon. El resultat s’ha d’assignar a una variable NO PL/SQL i després imprimir-la (fora del bloc PL/SQL) per a comprovar que la operació ha estat correcta.
-
+-- 13. Program a block in PL / SQL that asks the user for the value of two numbers. These two numbers are assigned two PL / SQL variables (at the time of declaration). Both numbers must be positive, otherwise the user must be given the corresponding message. An operation must be performed with these numbers: divide them by one and add the second. The result must be assigned to a NO PL / SQL variable and then printed (outside the PL / SQL block) to verify that the operation was successful.
 
 
 
@@ -379,24 +283,7 @@ print resultado;
 
 
 
-
-
-
-
-
-
-
-
-
-
-14. Mateix exercici que l’exercici 13, però ara també s’ha de controlar que el número primer sigui més gran que el segon. En cas contrari ha de donar el següent missatge: Error! el primer número ha de ser més gran que el segon.
-
-
-
-
-
-
-
+-- 14. Same exercise as exercise 13, but now it must also be checked that the first number is greater than the second. Otherwise it should give the following message: Error! the first number must be greater than the second.
 
 set serveroutput on
 accept v_numero1 prompt 'Introduce numero 1';
@@ -415,7 +302,7 @@ begin
 if num1 < 0 or num2 < 0 then
       dbms_output.put_line('Los numeros no puede ser negativos');
   elsif nu1 < nu2 then
-    dbms_output.put_line('ERROR! El primer número ha de ser mayor que el segundo');
+    dbms_output.put_line('ERROR! El primer nÃºmero ha de ser mayor que el segundo');
 else
     :resultado :=  (num1 / num2) + num2;    
 end if;
@@ -423,44 +310,13 @@ end;
 /
 print resultado;
 
+--15. Program a block that shows us the numbers between a range. The minimum range is 1 and the maximum should be asked to the user.
+--    1. Program the block using the FOR structure.
+--    2. Program the block using the WHILE structure.
 
+--  for case
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-15. Programar un bloc que ens mostri els números entre un rang. El rang mínim és 1 i el màxim se li ha de preguntar a l’usuari.
-   1. Programar el bloc utilitzant l’estructura FOR.
-   2. Programar el bloc utilitzant l’estructura WHILE.
-
-
-
-
-
-
-modo for
-
-
-accept numero1 prompt 'Introduce un número';
+accept numero1 prompt 'Introduce un nÃºmero';
 begin
 for i in 1..&numero1 loop
     dbms_output.put_line(i);
@@ -468,14 +324,7 @@ for i in 1..&numero1 loop
 end;
 /
  
-
-
-
-
-
-
-modo while
-
+--  while case
 
 accept num1 prompt 'Introduce un numero';
 declare 
@@ -489,17 +338,11 @@ end;
 /
 
 
-16. Programar un bloc que ens mostri els números entre un rang amb un salt. Tant el rang mínim, com el màxim i el salt se li ha de preguntar a l’usuari. A més, s’ha de tenir en compte que el rang mínim sempre ha de ser més petit que el rang màxim i que el salt no ha de ser negatiu. En cas contrari s’ha de donar el missatge corresponent i acabar el programa.
-
-
-
-
-
+-- 16. Program a block that shows us the numbers between a range and a jump. Both the minimum and maximum range and the jump must be asked to the user. Also, keep in mind that the minimum range should always be smaller than the maximum range and the jump should not be negative. Otherwise, the corresponding message must be given and the program finished.
 
 accept rang_minim prompt 'Introduce el rango minimo';
 accept rang_maxim prompt 'Introduce el rango maximo';
 accept cantidad_salto prompt 'Introduce el salto';
-
 
 declare 
     minim number := &rang_minim;
@@ -508,7 +351,7 @@ declare
     i number := &rang_minim;
 begin 
  if i > maxim then
-       dbms_output.put_line('El rango mínimo ha de ser menor que el rango máximo');
+       dbms_output.put_line('El rango mÃ­nimo ha de ser menor que el rango mÃ¡ximo');
     elsif salto < 0 then
        dbms_output.put_line('La frecuencia de salto no puede ser negativa');
     else
@@ -520,17 +363,7 @@ end if;
 end;
 /
 
-
-
-
-
-
-
-
 LOOP
-
-
-
 
 accept minim prompt 'Dime el rango minimo';
 accept maxim prompt 'Dime el rango maximo';
@@ -541,9 +374,9 @@ v_maxim number := &maxim;
 i number := &minim;
     begin
      if i >= v_maxim then
-         dbms_output.put_line('El rango mínimo ha de ser menor que el rango máximo');
+         dbms_output.put_line('El rango mÃ­nimo ha de ser menor que el rango mÃ¡ximo');
     elsif v_salto <= 0 then
-            dbms_output.put_line('El rango mínimo ha de ser mayor que el rango máximo');
+            dbms_output.put_line('El rango mÃ­nimo ha de ser mayor que el rango mÃ¡ximo');
     else
         loop
           dbms_output.put_line(i);
