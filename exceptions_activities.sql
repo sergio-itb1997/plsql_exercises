@@ -3,10 +3,6 @@
 --In addition, it must be checked whether or not the employee exists in the database. (Error handling)
 
 
-
-
-
-
 accept emp_id number prompt 'Introduce el id del empleado';
 declare    
 idempleado number := &emp_id;    
@@ -43,21 +39,6 @@ begin
       dbms_output.put_line('ERROR: L ́empleat amb id '||idempleado||' no existeix');
 end imprimir;
 /
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
