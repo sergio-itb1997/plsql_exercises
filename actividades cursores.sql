@@ -5,7 +5,7 @@
 
 
 
-accept salario prompt 'Introduce la panoja';
+accept salario prompt 'Introduce el salario';
 declare
 esNegatiu exception;
 panoja employees.salary%type := &salario;
